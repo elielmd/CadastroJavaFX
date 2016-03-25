@@ -31,7 +31,7 @@ public class MainApp extends Application {
 	public MainApp() {
 		// Add some sample data
 		personData.add(new Person("Eliel", "Marques"));
-		personData.add(new Person("Darth", "Vader:"));
+		personData.add(new Person("Darth", "Vader"));
 		personData.add(new Person("Anakin", "Skywalker"));
 		personData.add(new Person("Harry", "Potter"));
 		personData.add(new Person("Rocky", "Balboa"));
