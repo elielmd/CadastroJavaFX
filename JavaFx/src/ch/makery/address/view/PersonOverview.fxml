@@ -62,8 +62,8 @@
                   </GridPane>
                   <HBox layoutX="231.0" layoutY="242.0" spacing="5.0" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="15.0">
                      <children>
-                        <Button mnemonicParsing="false" text="Inserir" textFill="#098005" />
-                        <Button mnemonicParsing="false" text="Alterar" textFill="#15589a" />
+                        <Button mnemonicParsing="false" onAction="#handleNewPerson" text="Inserir" textFill="#098005" />
+                        <Button mnemonicParsing="false" onAction="#handleEditPerson" text="Alterar" textFill="#15589a" />
                         <Button mnemonicParsing="false" onAction="#handleDeletePerson" text="Excluir" textFill="#ab1515" />
                      </children>
                      <effect>
