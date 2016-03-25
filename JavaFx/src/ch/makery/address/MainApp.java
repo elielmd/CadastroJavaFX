@@ -3,6 +3,7 @@ package ch.makery.address;
 import java.io.IOException;
 
 import ch.makery.address.model.Person;
+import ch.makery.address.view.PersonOverviewController;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -38,6 +39,10 @@ public class MainApp extends Application {
 		personData.add(new Person("Jack", "Sparrow"));
 		personData.add(new Person("Indiana", "Jones"));
 		personData.add(new Person("Emmett", "Brown"));
+	
+		/**
+		 * Mostra a person overview dentro do root layout.
+		 */
 	}
 
 	/**
@@ -83,18 +88,26 @@ public class MainApp extends Application {
 	/**
 	 * Mostra o person overview dentro do root layout.
 	 */
+	/**
+	 * Mostra a person overview dentro do root layout.
+	 */
 	public void showPersonOverview() {
-		try {
-			// Carrega o person overview.
-			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(MainApp.class.getResource("view/PersonOverview.fxml"));
-			AnchorPane personOverview = (AnchorPane) loader.load();
+	    try {
+	        // Carrega a person overview.
+	        FXMLLoader loader = new FXMLLoader();
+	        loader.setLocation(MainApp.class.getResource("view/PersonOverview.fxml"));
+	        AnchorPane personOverview = (AnchorPane) loader.load();
 
-			// Define o person overview dentro do root layout.
-			rootLayout.setCenter(personOverview);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+	        // Define a person overview no centro do root layout.
+	        rootLayout.setCenter(personOverview);
+
+	        // Dá ao controlador acesso à the main app.
+	        PersonOverviewController controller = loader.getController();
+	        controller.setMainApp(this);
+
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }
 	}
 
 	/**
@@ -109,4 +122,8 @@ public class MainApp extends Application {
 	public static void main(String[] args) {
 		launch(args);
 	}
+	
+	/**
+	 * Mostra a person overview dentro do root layout.
+	 */
 }
