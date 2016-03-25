@@ -82,7 +82,7 @@ public class PersonOverviewController {
             // Person é null, remove todo o texto.
             firstNameLabel.setText("");
             lastNameLabel.setText("");
-            streetLabel.setText("");
+            streetLabel.setText(""); 
             postalCodeLabel.setText("");
             cityLabel.setText("");
             birthdayLabel.setText("");
