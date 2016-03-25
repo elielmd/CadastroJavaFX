@@ -52,12 +52,12 @@
                         <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <Label text="Endereço" GridPane.rowIndex="2" />
                         <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Label text="Cidade" GridPane.rowIndex="3" />
                         <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <Label text="Numero" GridPane.rowIndex="4" />
                         <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                         <Label text="Data Nascimento" GridPane.rowIndex="5" />
                         <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <Label text="Numero" GridPane.rowIndex="3" />
+                        <Label text="Cidade" GridPane.rowIndex="4" />
                      </children>
                   </GridPane>
                   <HBox layoutX="231.0" layoutY="242.0" spacing="5.0" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="15.0">
