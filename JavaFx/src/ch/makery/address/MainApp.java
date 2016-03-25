@@ -2,7 +2,10 @@ package ch.makery.address;
 
 import java.io.IOException;
 
+import ch.makery.address.model.Person;
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
@@ -11,64 +14,99 @@ import javafx.stage.Stage;
 
 public class MainApp extends Application {
 
-    private Stage primaryStage;
-    private BorderPane rootLayout;
+	private Stage primaryStage;
+	private BorderPane rootLayout;
 
-    @Override
-    public void start(Stage primaryStage) {
-        this.primaryStage = primaryStage;
-        this.primaryStage.setTitle("AddressApp");
+	// ... APÓS AS OUTRAS VARIÁVEIS ...
 
-        initRootLayout();
+	/**
+	 * Os dados como uma observable list de Persons.
+	 */
+	private ObservableList<Person> personData = FXCollections.observableArrayList();
 
-        showPersonOverview();
-    }
+	/**
+	 * Construtor
+	 */
+	public MainApp() {
+		// Add some sample data
+		personData.add(new Person("Eliel", "Marques"));
+		personData.add(new Person("Darth", "Vader:"));
+		personData.add(new Person("Anakin", "Skywalker"));
+		personData.add(new Person("Harry", "Potter"));
+		personData.add(new Person("Rocky", "Balboa"));
+		personData.add(new Person("Hannibal", "Lecter"));
+		personData.add(new Person("Jack", "Sparrow"));
+		personData.add(new Person("Indiana", "Jones"));
+		personData.add(new Person("Emmett", "Brown"));
+	}
 
-    /**
-     * Inicializa o root layout (layout base).
-     */
-    public void initRootLayout() {
-        try {
-            // Carrega o root layout do arquivo fxml.
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(MainApp.class.getResource("view/RootLayout.fxml"));
-            rootLayout = (BorderPane) loader.load();
+	/**
+	 * Retorna os dados como uma observable list de Persons.
+	 * 
+	 * @return
+	 */
+	public ObservableList<Person> getPersonData() {
+		return personData;
+	}
 
-            // Mostra a scene (cena) contendo oroot layout.
-            Scene scene = new Scene(rootLayout);
-            primaryStage.setScene(scene);
-            primaryStage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+	// ... O RESTANTE DA CLASSE ...
 
-    /**
-     * Mostra o person overview dentro do root layout.
-     */
-    public void showPersonOverview() {
-        try {
-            // Carrega o person overview.
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(MainApp.class.getResource("view/PersonOverview.fxml"));
-            AnchorPane personOverview = (AnchorPane) loader.load();
+	@Override
+	public void start(Stage primaryStage) {
+		this.primaryStage = primaryStage;
+		this.primaryStage.setTitle("AddressApp");
 
-            // Define o person overview dentro do root layout.
-            rootLayout.setCenter(personOverview);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+		initRootLayout();
 
-    /**
-     * Retorna o palco principal.
-     * @return
-     */
-    public Stage getPrimaryStage() {
-        return primaryStage;
-    }
+		showPersonOverview();
+	}
 
-    public static void main(String[] args) {
-        launch(args);
-    }
+	/**
+	 * Inicializa o root layout (layout base).
+	 */
+	public void initRootLayout() {
+		try {
+			// Carrega o root layout do arquivo fxml.
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(MainApp.class.getResource("view/RootLayout.fxml"));
+			rootLayout = (BorderPane) loader.load();
+
+			// Mostra a scene (cena) contendo oroot layout.
+			Scene scene = new Scene(rootLayout);
+			primaryStage.setScene(scene);
+			primaryStage.show();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * Mostra o person overview dentro do root layout.
+	 */
+	public void showPersonOverview() {
+		try {
+			// Carrega o person overview.
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(MainApp.class.getResource("view/PersonOverview.fxml"));
+			AnchorPane personOverview = (AnchorPane) loader.load();
+
+			// Define o person overview dentro do root layout.
+			rootLayout.setCenter(personOverview);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * Retorna o palco principal.
+	 * 
+	 * @return
+	 */
+	public Stage getPrimaryStage() {
+		return primaryStage;
+	}
+
+	public static void main(String[] args) {
+		launch(args);
+	}
 }
