@@ -64,7 +64,7 @@
                      <children>
                         <Button mnemonicParsing="false" text="Inserir" />
                         <Button mnemonicParsing="false" text="Alterar" />
-                        <Button mnemonicParsing="false" text="Excluir" />
+                        <Button mnemonicParsing="false" onAction="#handleDeletePerson" text="Excluir" />
                      </children>
                      <effect>
                         <DropShadow color="#1c3c4d" />
