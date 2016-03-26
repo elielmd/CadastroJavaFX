@@ -2,12 +2,11 @@ package ch.makery.address.view;
 
 import java.io.File;
 
-import javafx.fxml.FXML;
-import javafx.stage.FileChooser;
-
 import org.controlsfx.dialog.Dialogs;
 
 import ch.makery.address.MainApp;
+import javafx.fxml.FXML;
+import javafx.stage.FileChooser;
 
 /**
  * O controlador para o root layout. O root layout provê um layout básico
@@ -95,6 +94,14 @@ public class RootLayoutController {
             }
             mainApp.savePersonDataToFile(file);
         }
+    }
+    
+    /**
+     * Abre as estatísticas de aniversário.
+     */
+    @FXML
+    private void handleShowBirthdayStatistics() {
+      mainApp.showBirthdayStatistics();
     }
 
     /**
