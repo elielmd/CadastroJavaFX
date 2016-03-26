@@ -85,16 +85,17 @@
 				<include name="*" />
 			</fileset>
 		</copy>
-	
-	
+
 		<fx:resources id="appRes">
-			<fx:fileset dir="dist" includes="JavaFx.jar"/>
-			<fx:fileset dir="dist" includes="libs/*"/>
-		</fx:resources>
+		    <fx:fileset dir="dist" includes="AddressApp.jar"/>
+		    <fx:fileset dir="dist" includes="libs/*"/>
+		    <fx:fileset dir="dist" includes="resources/**"/>
+		</fx:resources> 
 	
 		<fx:application id="fxApplication"
-			name="AddressApp"
-			mainClass="ch.makery.address.MainApp"
+		    name="AddressApp"
+		    mainClass="ch.makery.address.MainApp"
+		    version="1.0"
 		/>
 	
 		<mkdir dir="build/classes/META-INF" />
