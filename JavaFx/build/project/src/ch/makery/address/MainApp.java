@@ -73,7 +73,7 @@ public class MainApp extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 	    this.primaryStage = primaryStage;
-	    this.primaryStage.setTitle("AddressApp");
+	    this.primaryStage.setTitle("JavaFx");
 
 	    // Set the application icon.
 	    this.primaryStage.getIcons().add(new Image("file:resources/images/address_book_32.png"));
@@ -206,12 +206,12 @@ public class MainApp extends Application {
 	        prefs.put("filePath", file.getPath());
 
 	        // Update the stage title.
-	        primaryStage.setTitle("AddressApp - " + file.getName());
+	        primaryStage.setTitle("JavaFx - " + file.getName());
 	    } else {
 	        prefs.remove("filePath");
 
 	        // Update the stage title.
-	        primaryStage.setTitle("AddressApp");
+	        primaryStage.setTitle("JavaFx");
 	    }
 	}
 	
